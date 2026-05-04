@@ -1,16 +1,24 @@
 package service;
 
-import model.Student;
 import java.util.ArrayList;
+import model.Student;
 
 public class StudentService {
 
     ArrayList<Student> students = new ArrayList<>();
 
-    public void addStudent(Student s) {
-        students.add(s);
-        System.out.println("Student Added!");
+   public void addStudent(Student s) {
+
+    for (Student st : students) {
+        if (st.getRollNo().equals(s.getRollNo())) {
+            System.out.println("Student already exists!");
+            return;
+        }
     }
+
+    students.add(s);
+    System.out.println("Student Added!");
+}
 
     public void viewStudents() {
         if (students.isEmpty()) {
@@ -19,14 +27,16 @@ public class StudentService {
         }
 
         for (Student s : students) {
-            System.out.println(s.rollNo + " | " + s.name + " | " + s.age);
+            System.out.println(s);
+
         }
     }
 
     public void searchStudent(String rollNo) {
         for (Student s : students) {
-            if (s.rollNo.equals(rollNo)) {
-                System.out.println("Found: " + s.rollNo + " | " + s.name + " | " + s.age);
+            if (s.getRollNo().equals(rollNo)) {
+               System.out.println("Found: " + s);
+
                 return;
             }
         }
@@ -35,7 +45,8 @@ public class StudentService {
 
     public void deleteStudent(String rollNo) {
         for (int i = 0; i < students.size(); i++) {
-            if (students.get(i).rollNo.equals(rollNo)) {
+            if (students.get(i).getRollNo().equals(rollNo)) {
+
                 students.remove(i);
                 System.out.println("Student Deleted!");
                 return;
