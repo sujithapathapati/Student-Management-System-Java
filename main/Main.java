@@ -6,7 +6,7 @@ import util.InputHelper;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void mai(String[] args) {
 
         StudentService service = new StudentService();
 
