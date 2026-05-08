@@ -1,7 +1,7 @@
 package main;
 
 import model.Student;
-import service.StudentServic;
+import service.StudentService;
 import util.InputHelper;
 
 public class Main {
