@@ -1,4 +1,4 @@
-package servic
+package service
 
 import java.util.ArrayList;
 import model.Student;
